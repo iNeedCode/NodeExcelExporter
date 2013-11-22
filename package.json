@@ -1,0 +1,22 @@
+{
+  "name": "NodeExcelExporter",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "excel",
+    "mysql"
+  ],
+  "dependencies" : {
+    "node-mysql": "git://github.com/felixge/node-mysql.git",
+    "heredoc": "1.2.0",
+    "js-yaml": "git://github.com/nodeca/js-yaml.git",
+    "optimist": "*",
+    "node_spreadsheet": "*"
+  },
+  "author": "Willy Wonka",
+  "license": "BSD"
+}
