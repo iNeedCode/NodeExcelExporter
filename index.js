@@ -6,7 +6,7 @@ var spreadsheet 	= require('node_spreadsheet');
 
 var inMajlis 	= (typeof argv.majlis === "undefined") ? "'dortmund'" : "'"+argv.majlis+"'";
 var inFrom 		= (typeof argv.from === "undefined") ? '08-2013' : argv.from;
-var inTo 		= (typeof argv.till === "undefined") ? '09-2013' : argv.till;
+var inTo 		= (typeof argv.to === "undefined") ? '09-2013' : argv.to;
 // console.log(inMajlis + " ==> " + inFrom + " - " + inTo);
 
 var outFile = __dirname + '/' + generateFilename(inFrom, inTo, inMajlis);
@@ -37,7 +37,10 @@ data.push = function (id, value) {
 data.push(0, 'Majlis:,' + inMajlis.replace(/\'/g, '') );
 data.push(1,"Zeitraum:," + inFrom + ', bis,' + inTo);
 data.push(2,"");
-data.push(3,"Frage Nr, Frage");
+data.push(3,"FRAGE");
+for (var i = inFromMonth; i <= inToMonth; i++) {
+	data.push(3,i+". Monat")
+};
 
 
 var query = heredoc(function () {/*
@@ -63,23 +66,26 @@ query = query.replace(/-inToMonth-/g, inToMonth);
 connection.query(query, function(err, rows, fields) {
 	if (err) throw err;
 		var rowsLentgh = rows.length;
+		mod = 98 // number of questions of one report
 		
 		for (var i = 0; i < rowsLentgh; i++) {
-			data.push(i+4, rows[i].ID);
-			data.push(i+4, rows[i].QUESTION.replace(/[\,\n]/g, " "));
+			if (i < mod) {
+				// data.push(i%mod+4, rows[i].ID);
+				data.push(i%mod+4, rows[i].QUESTION.replace(/[\,\n]/g, " "));				
+			};
+
 			if (rows[i].TYPEID == "4") {
-				data.push(i+4, (rows[i].ANSWER == '1') ? "Ja" : "Nein");
+				data.push(i%mod+4, (rows[i].ANSWER == '1') ? "Ja" : "Nein");
 			}
 			else {
-				data.push(i+4,rows[i].ANSWER);
+				data.push(i%mod+4,rows[i].ANSWER);
 			}
 		};
 
 		// console.log(data);
 		spreadsheet.write(data, outFile,function(err, fileName) {
-    		// if(!err) console.log(fileName);
+    		if(!err) console.log(fileName);
 		});
-
 });
 
 
