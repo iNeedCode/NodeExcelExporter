@@ -37,9 +37,9 @@ data.push = function (id, value) {
 data.push(0, 'Majlis:,' + inMajlis.replace(/\'/g, '') );
 data.push(1,"Zeitraum:," + inFrom + ', bis,' + inTo);
 data.push(2,"");
-data.push(3,"FRAGE");
+data.push(3,"NO,QUESTION");
 for (var i = inFromMonth; i <= inToMonth; i++) {
-	data.push(3,i+". Monat")
+	data.push(3,i+". MONTH")
 };
 
 
@@ -71,6 +71,7 @@ connection.query(query, function(err, rows, fields) {
 		for (var i = 0; i < rowsLentgh; i++) {
 			if (i < mod) {
 				// data.push(i%mod+4, rows[i].ID);
+				data.push(i%mod+4, i+1);
 				data.push(i%mod+4, rows[i].QUESTION.replace(/[\,\n]/g, " "));				
 			};
 
