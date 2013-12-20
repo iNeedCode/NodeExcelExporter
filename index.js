@@ -52,7 +52,7 @@ FROM tbl_ait_rpt_reportanswer AS tbl_answer
 	JOIN tbl_ait_rpt_reportheader AS tbl_report
 		ON tbl_answer.REPORTID = tbl_report.ID
 WHERE tbl_report.MAJLISID = -MAJLIS- AND tbl_report.YEAR >= -inFromYear- AND tbl_report.YEAR <= -inToYear- AND tbl_report.MONTH >= -inFromMonth- AND tbl_report.MONTH <= -inToMonth-
-ORDER BY tbl_report.YEAR ASC, tbl_report.MONTH ASC
+ORDER BY tbl_report.YEAR ASC, tbl_report.MONTH ASC, tbl_question.ID ASC
     */});
 
 // replacing the data with the user input
@@ -67,7 +67,7 @@ query = query.replace(/-inToMonth-/g, inToMonth);
 connection.query(query, function(err, rows, fields) {
 	if (err) throw err;
 		var rowsLentgh = rows.length;
-		mod = 98 // number of questions of one report
+		mod = 96 // number of questions of one report
 		
 		for (var i = 0; i < rowsLentgh; i++) {
 			if (i < mod) {
