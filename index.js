@@ -24,6 +24,7 @@ var inToMonth 		= toMonth(inTo);
 var inToYear 		= toYear(inTo);
 // console.log	(inFromMonth+"/"+inFromYear+"-"+inToMonth+"/"+inToYear);
 
+validate(); // validate user input
 
 var data = [];
 data.push = function (id, value) {
@@ -95,6 +96,25 @@ connection.end();
 // ---------------------------------
 // FUNCTIONS
 // ---------------------------------
+
+function validate () {
+	errorMessage = '';
+	if (inFromYear > inToYear) {
+		errorMessage += "Starting year is greater then ending year\n";
+	}
+	else if (inFromYear == inToYear && inFromMonth > inToMonth) {
+		errorMessage += "Starting month is greater then ending month\n";
+	}
+	else if (inFromMonth < 1 && inFromMonth > 12 && inToMonth < 1 && inToMonth > 12) {
+		errorMessage += "months can be only betweeen 1 and 12";
+	};
+
+	if (errorMessage != '') {
+		console.log(errorMessage);
+		process.exit(1);
+	};
+
+}
 
 function toMonth (_date) {
 	month = _date.match(/^../g);
