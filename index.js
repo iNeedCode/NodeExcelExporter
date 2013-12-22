@@ -79,14 +79,52 @@ if (inMajlis != "'undefined'") {
 		});
 		connection.end();
 	});
-};
-
-if (inZone != "'undefined'" || inRegion != "'undefined'") {
+}
+else if (inZone != "'undefined'" || inRegion != "'undefined'" && inRegion != "'all'") {
 	for (var i = inFromMonth; i <= inToMonth; i++) {
 		data.push(3,i+"/"+inFromYear)
 	};
-	getAllMajalisFromZone(function(includedMajalis) {
+	getAllMajalisFromZoneOrRegion(function(includedMajalis) {
 		// console.log(includedMajalis);
+		queryBuilderMajlisGroupBy(inFromMonth, inFromYear, inToMonth, inToYear, includedMajalis, function(query){
+			// console.log(query);
+			data.push(2, "received reports")
+			connection.query(query, function(err, rows, fields) {
+				if (err) throw err;
+				var rowsLentgh = rows.length;
+				mod = 96 // number of questions of one report
+				
+				for (var i = 0; i < rowsLentgh; i++) {
+					if (i%mod == 1) {
+						data.push(2, rows[i].REPORTS+"/"+includedMajalis.length)
+					};
+					if (i < mod) {
+						data.push(i%mod+4, i+1);
+						data.push(i%mod+4, rows[i].QUESTION.replace(/[\,\n]/g, " "));				
+					};
+
+					if (rows[i].TYPEID == "4") {
+						data.push(i%mod+4, rows[i].ANSWER + "/" + rows[i].REPORTS);
+					}
+					else {
+						data.push(i%mod+4,rows[i].ANSWER);
+					};
+				};
+
+				// console.log(data);
+				spreadsheet.write(data, outFile,function(err, fileName) {
+					if(!err) console.log(fileName);
+				});
+			});
+		connection.end();
+		});
+	});
+}
+else{
+	for (var i = inFromMonth; i <= inToMonth; i++) {
+		data.push(3,i+"/"+inFromYear)
+	};
+	getAllMajalis(function(includedMajalis) {
 		queryBuilderMajlisGroupBy(inFromMonth, inFromYear, inToMonth, inToYear, includedMajalis, function(query){
 			// console.log(query);
 			data.push(2, "received reports")
@@ -126,8 +164,25 @@ if (inZone != "'undefined'" || inRegion != "'undefined'") {
 // ---------------------------------
 // FUNCTIONS
 // ---------------------------------
+function getAllMajalis (callback) {
+	var includedMajalis = new Array();
+	q = heredoc(function(){/*
+		SELECT majlis.MajlisId
+		FROM majlis
+	*/});
+	// console.log(q);
+	
+	connection.query(q, function(err, rows, fields) {
+	if (err) throw err;
+		var rowsLentgh = rows.length;
+		for (var i = 0; i < rowsLentgh; i++) {
+			includedMajalis.unshift(rows[i].MajlisId);
+		};
+		callback(includedMajalis)
+	});
+}
 
-function getAllMajalisFromZone (callback) {
+function getAllMajalisFromZoneOrRegion (callback) {
 	var includedMajalis = new Array();
 	q = heredoc(function(){/*
 		SELECT majlis.MajlisId
@@ -146,7 +201,6 @@ function getAllMajalisFromZone (callback) {
 		};
 		callback(includedMajalis)
 	});
-	// connection.end();
 }
 
 function queryBuilderMajlis (startingMonth, startingYear, endingMonth, endingYear, includedMajalis, callback) {
