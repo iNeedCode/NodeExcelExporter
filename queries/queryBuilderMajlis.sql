@@ -5,4 +5,4 @@ FROM tbl_ait_rpt_reportanswer AS tbl_answer
 	JOIN tbl_ait_rpt_reportheader AS tbl_report
 		ON tbl_answer.REPORTID = tbl_report.ID
 WHERE tbl_report.MAJLISID = 'dortmund' AND tbl_report.YEAR >= 2013 AND tbl_report.YEAR <= 2013 AND tbl_report.MONTH >= 8 AND tbl_report.MONTH <= 9
-ORDER BY tbl_report.YEAR ASC, tbl_report.MONTH ASC
+ORDER BY tbl_report.YEAR ASC, tbl_report.MONTH ASC, tbl_question.ID ASC

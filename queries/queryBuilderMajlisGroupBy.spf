@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ContentFilters</key>
+	<dict/>
+	<key>auto_connect</key>
+	<true/>
+	<key>data</key>
+	<dict>
+		<key>connection</key>
+		<dict>
+			<key>database</key>
+			<string>d0161413</string>
+			<key>host</key>
+			<string>khuddam.de</string>
+			<key>kcid</key>
+			<string>-8164293001852611946</string>
+			<key>name</key>
+			<string>bericht.khuddam.de</string>
+			<key>rdbms_type</key>
+			<string>mysql</string>
+			<key>sslCACertFileLocation</key>
+			<string></string>
+			<key>sslCACertFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslCertificateFileLocation</key>
+			<string></string>
+			<key>sslCertificateFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslKeyFileLocation</key>
+			<string></string>
+			<key>sslKeyFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>type</key>
+			<string>SPTCPIPConnection</string>
+			<key>useSSL</key>
+			<integer>0</integer>
+			<key>user</key>
+			<string>d0161413</string>
+		</dict>
+		<key>session</key>
+		<dict>
+			<key>connectionEncoding</key>
+			<string>utf8</string>
+			<key>contentPageNumber</key>
+			<integer>1</integer>
+			<key>contentSelection</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGJCVYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKgHCBMUFRYaIVUkbnVsbNMJCgsMDxJX
+			TlMua2V5c1pOUy5vYmplY3RzViRjbGFzc6INDoACgAOiEBGABIAF
+			gAdUdHlwZVRyb3dzXxAdU2VsZWN0aW9uRGV0YWlsVHlwZU5TSW5k
+			ZXhTZXTSFwsYGVxOU1JhbmdlQ291bnQQAIAG0hscHR5aJGNsYXNz
+			bmFtZVgkY2xhc3Nlc1pOU0luZGV4U2V0oh8gWk5TSW5kZXhTZXRY
+			TlNPYmplY3TSGxwiI1xOU0RpY3Rpb25hcnmiIiBfEA9OU0tleWVk
+			QXJjaGl2ZXLRJidUZGF0YYABAAgAEQAaACMALQAyADcAQABGAE0A
+			VQBgAGcAagBsAG4AcQBzAHUAdwB8AIEAoQCmALMAtQC3ALwAxwDQ
+			ANsA3gDpAPIA9wEEAQcBGQEcASEAAAAAAAACAQAAAAAAAAAoAAAA
+			AAAAAAAAAAAAAAABIw==
+			</data>
+			<key>contentSortColIsAsc</key>
+			<true/>
+			<key>contentViewport</key>
+			<string>{{0, 0}, {693, 456}}</string>
+			<key>isToolbarVisible</key>
+			<true/>
+			<key>queries</key>
+			<string>	SELECT tbl_report.YEAR, tbl_report.MONTH, tbl_question.ID, tbl_question.QUESTION , COUNT(*) AS REPORTS, SUM(tbl_answer.ANSWER) AS ANSWER, tbl_question.TYPEID
+	FROM tbl_ait_rpt_reportanswer AS tbl_answer
+		JOIN tbl_ait_rpt_reportquestion AS tbl_question
+			ON tbl_answer.QUESTIONID = tbl_question.ID
+		JOIN tbl_ait_rpt_reportheader AS tbl_report
+			ON tbl_answer.REPORTID = tbl_report.ID
+	WHERE (tbl_report.MAJLISID = 'dagriesheim' OR tbl_report.MAJLISID = 'darmstadtcity' OR tbl_report.MAJLISID = 'graefenhausen' OR tbl_report.MAJLISID = 'kranichsteinost' OR tbl_report.MAJLISID = 'kranichsteinwest' OR tbl_report.MAJLISID = 'nuurddinmoschee' OR tbl_report.MAJLISID = 'weiterstadt') AND tbl_report.YEAR &gt;= 2013 AND tbl_report.YEAR &lt;= 2013 AND tbl_report.MONTH &gt;= 1 AND tbl_report.MONTH &lt;= 5
+	GROUP BY tbl_report.YEAR, tbl_report.MONTH, tbl_question.ID
+	ORDER BY tbl_report.YEAR ASC, tbl_report.MONTH ASC, tbl_question.ID ASC</string>
+			<key>view</key>
+			<string>SP_VIEW_CUSTOMQUERY</string>
+			<key>windowVerticalDividerPosition</key>
+			<real>202</real>
+		</dict>
+	</dict>
+	<key>encrypted</key>
+	<false/>
+	<key>format</key>
+	<string>connection</string>
+	<key>queryFavorites</key>
+	<array/>
+	<key>queryHistory</key>
+	<array>
+		<string>SELECT tbl_report.YEAR, tbl_report.MONTH, tbl_question.ID, tbl_question.QUESTION , COUNT(*) AS REPORTS, SUM(tbl_answer.ANSWER) AS ANSWER, tbl_question.TYPEID
+	FROM tbl_ait_rpt_reportanswer AS tbl_answer
+		JOIN tbl_ait_rpt_reportquestion AS tbl_question
+			ON tbl_answer.QUESTIONID = tbl_question.ID
+		JOIN tbl_ait_rpt_reportheader AS tbl_report
+			ON tbl_answer.REPORTID = tbl_report.ID
+	WHERE (tbl_report.MAJLISID = 'dagriesheim' OR tbl_report.MAJLISID = 'darmstadtcity' OR tbl_report.MAJLISID = 'graefenhausen' OR tbl_report.MAJLISID = 'kranichsteinost' OR tbl_report.MAJLISID = 'kranichsteinwest' OR tbl_report.MAJLISID = 'nuurddinmoschee' OR tbl_report.MAJLISID = 'weiterstadt') AND tbl_report.YEAR &gt;= 2013 AND tbl_report.YEAR &lt;= 2013 AND tbl_report.MONTH &gt;= 1 AND tbl_report.MONTH &lt;= 5
+
+	GROUP BY tbl_report.YEAR, tbl_report.MONTH, tbl_question.ID
+	ORDER BY tbl_report.YEAR ASC, tbl_report.MONTH ASC, tbl_question.ID ASC</string>
+		<string>SELECT tbl_report.YEAR, tbl_report.MONTH, tbl_question.ID, tbl_question.QUESTION , COUNT(*) AS REPORTS, SUM(tbl_answer.ANSWER) AS ANSWER, tbl_question.TYPEID #tbl_answer.ANSWER, tbl_question.TYPEID
+	FROM tbl_ait_rpt_reportanswer AS tbl_answer
+		JOIN tbl_ait_rpt_reportquestion AS tbl_question
+			ON tbl_answer.QUESTIONID = tbl_question.ID
+		JOIN tbl_ait_rpt_reportheader AS tbl_report
+			ON tbl_answer.REPORTID = tbl_report.ID
+	WHERE (tbl_report.MAJLISID = 'dagriesheim' OR tbl_report.MAJLISID = 'darmstadtcity' OR tbl_report.MAJLISID = 'graefenhausen' OR tbl_report.MAJLISID = 'kranichsteinost' OR tbl_report.MAJLISID = 'kranichsteinwest' OR tbl_report.MAJLISID = 'nuurddinmoschee' OR tbl_report.MAJLISID = 'weiterstadt') AND tbl_report.YEAR &gt;= 2013 AND tbl_report.YEAR &lt;= 2013 AND tbl_report.MONTH &gt;= 1 AND tbl_report.MONTH &lt;= 5
+
+	GROUP BY tbl_report.YEAR, tbl_report.MONTH, tbl_question.ID
+	ORDER BY tbl_report.YEAR ASC, tbl_report.MONTH ASC, tbl_question.ID ASC</string>
+		<string>SELECT tbl_report.YEAR, tbl_report.MONTH, tbl_question.ID, tbl_question.QUESTION , COUNT(*) AS REPORTS, SUM(tbl_answer.ANSWER) AS ANSWER #tbl_answer.ANSWER, tbl_question.TYPEID
+	FROM tbl_ait_rpt_reportanswer AS tbl_answer
+		JOIN tbl_ait_rpt_reportquestion AS tbl_question
+			ON tbl_answer.QUESTIONID = tbl_question.ID
+		JOIN tbl_ait_rpt_reportheader AS tbl_report
+			ON tbl_answer.REPORTID = tbl_report.ID
+	WHERE (tbl_report.MAJLISID = 'dagriesheim' OR tbl_report.MAJLISID = 'darmstadtcity' OR tbl_report.MAJLISID = 'graefenhausen' OR tbl_report.MAJLISID = 'kranichsteinost' OR tbl_report.MAJLISID = 'kranichsteinwest' OR tbl_report.MAJLISID = 'nuurddinmoschee' OR tbl_report.MAJLISID = 'weiterstadt') AND tbl_report.YEAR &gt;= 2013 AND tbl_report.YEAR &lt;= 2013 AND tbl_report.MONTH &gt;= 1 AND tbl_report.MONTH &lt;= 5
+
+	GROUP BY tbl_report.YEAR, tbl_report.MONTH, tbl_question.ID
+	ORDER BY tbl_report.YEAR ASC, tbl_report.MONTH ASC, tbl_question.ID ASC</string>
+		<string>SELECT tbl_report.YEAR, tbl_report.MONTH, tbl_question.ID, tbl_question.QUESTION , COUNT(*) AS REPORTS, SUM(tbl_answer.ANSWER) #tbl_answer.ANSWER, tbl_question.TYPEID
+	FROM tbl_ait_rpt_reportanswer AS tbl_answer
+		JOIN tbl_ait_rpt_reportquestion AS tbl_question
+			ON tbl_answer.QUESTIONID = tbl_question.ID
+		JOIN tbl_ait_rpt_reportheader AS tbl_report
+			ON tbl_answer.REPORTID = tbl_report.ID
+	WHERE (tbl_report.MAJLISID = 'dagriesheim' OR tbl_report.MAJLISID = 'darmstadtcity' OR tbl_report.MAJLISID = 'graefenhausen' OR tbl_report.MAJLISID = 'kranichsteinost' OR tbl_report.MAJLISID = 'kranichsteinwest' OR tbl_report.MAJLISID = 'nuurddinmoschee' OR tbl_report.MAJLISID = 'weiterstadt') AND tbl_report.YEAR &gt;= 2013 AND tbl_report.YEAR &lt;= 2013 AND tbl_report.MONTH &gt;= 1 AND tbl_report.MONTH &lt;= 5
+
+	GROUP BY tbl_report.YEAR, tbl_report.MONTH, tbl_question.ID
+	ORDER BY tbl_report.YEAR ASC, tbl_report.MONTH ASC, tbl_question.ID ASC</string>
+		<string>SELECT tbl_report.YEAR, tbl_report.MONTH, tbl_question.ID, tbl_question.QUESTION , COUNT(*) AS REPORTS, COUNT(tbl_answer.ANSWER) #tbl_answer.ANSWER, tbl_question.TYPEID
+	FROM tbl_ait_rpt_reportanswer AS tbl_answer
+		JOIN tbl_ait_rpt_reportquestion AS tbl_question
+			ON tbl_answer.QUESTIONID = tbl_question.ID
+		JOIN tbl_ait_rpt_reportheader AS tbl_report
+			ON tbl_answer.REPORTID = tbl_report.ID
+	WHERE (tbl_report.MAJLISID = 'dagriesheim' OR tbl_report.MAJLISID = 'darmstadtcity' OR tbl_report.MAJLISID = 'graefenhausen' OR tbl_report.MAJLISID = 'kranichsteinost' OR tbl_report.MAJLISID = 'kranichsteinwest' OR tbl_report.MAJLISID = 'nuurddinmoschee' OR tbl_report.MAJLISID = 'weiterstadt') AND tbl_report.YEAR &gt;= 2013 AND tbl_report.YEAR &lt;= 2013 AND tbl_report.MONTH &gt;= 1 AND tbl_report.MONTH &lt;= 5
+
+	GROUP BY tbl_report.YEAR, tbl_report.MONTH, tbl_question.ID
+	ORDER BY tbl_report.YEAR ASC, tbl_report.MONTH ASC, tbl_question.ID ASC</string>
+		<string>SELECT tbl_report.YEAR, tbl_report.MONTH, tbl_question.ID, tbl_question.QUESTION , COUNT(*) AS REPORTS #tbl_answer.ANSWER, tbl_question.TYPEID
+	FROM tbl_ait_rpt_reportanswer AS tbl_answer
+		JOIN tbl_ait_rpt_reportquestion AS tbl_question
+			ON tbl_answer.QUESTIONID = tbl_question.ID
+		JOIN tbl_ait_rpt_reportheader AS tbl_report
+			ON tbl_answer.REPORTID = tbl_report.ID
+	WHERE (tbl_report.MAJLISID = 'dagriesheim' OR tbl_report.MAJLISID = 'darmstadtcity' OR tbl_report.MAJLISID = 'graefenhausen' OR tbl_report.MAJLISID = 'kranichsteinost' OR tbl_report.MAJLISID = 'kranichsteinwest' OR tbl_report.MAJLISID = 'nuurddinmoschee' OR tbl_report.MAJLISID = 'weiterstadt') AND tbl_report.YEAR &gt;= 2013 AND tbl_report.YEAR &lt;= 2013 AND tbl_report.MONTH &gt;= 1 AND tbl_report.MONTH &lt;= 5
+
+	GROUP BY tbl_report.YEAR, tbl_report.MONTH, tbl_question.ID
+	ORDER BY tbl_report.YEAR ASC, tbl_report.MONTH ASC, tbl_question.ID ASC</string>
+		<string>SELECT tbl_report.YEAR, tbl_report.MONTH, tbl_question.ID, tbl_question.QUESTION , COUNT(*) #tbl_answer.ANSWER, tbl_question.TYPEID
+	FROM tbl_ait_rpt_reportanswer AS tbl_answer
+		JOIN tbl_ait_rpt_reportquestion AS tbl_question
+			ON tbl_answer.QUESTIONID = tbl_question.ID
+		JOIN tbl_ait_rpt_reportheader AS tbl_report
+			ON tbl_answer.REPORTID = tbl_report.ID
+	WHERE (tbl_report.MAJLISID = 'dagriesheim' OR tbl_report.MAJLISID = 'darmstadtcity' OR tbl_report.MAJLISID = 'graefenhausen' OR tbl_report.MAJLISID = 'kranichsteinost' OR tbl_report.MAJLISID = 'kranichsteinwest' OR tbl_report.MAJLISID = 'nuurddinmoschee' OR tbl_report.MAJLISID = 'weiterstadt') AND tbl_report.YEAR &gt;= 2013 AND tbl_report.YEAR &lt;= 2013 AND tbl_report.MONTH &gt;= 1 AND tbl_report.MONTH &lt;= 5
+
+	GROUP BY tbl_report.YEAR, tbl_report.MONTH, tbl_question.ID
+	ORDER BY tbl_report.YEAR ASC, tbl_report.MONTH ASC, tbl_question.ID ASC</string>
+		<string>GROUP BY tbl_report.YEAR, tbl_report.MONTH, tbl_question.ID</string>
+		<string>SELECT tbl_report.YEAR, tbl_report.MONTH, tbl_question.ID, tbl_question.QUESTION , COUNT(*) #tbl_answer.ANSWER, tbl_question.TYPEID
+	FROM tbl_ait_rpt_reportanswer AS tbl_answer
+		JOIN tbl_ait_rpt_reportquestion AS tbl_question
+			ON tbl_answer.QUESTIONID = tbl_question.ID
+		JOIN tbl_ait_rpt_reportheader AS tbl_report
+			ON tbl_answer.REPORTID = tbl_report.ID
+	WHERE (tbl_report.MAJLISID = 'dagriesheim' OR tbl_report.MAJLISID = 'darmstadtcity' OR tbl_report.MAJLISID = 'graefenhausen' OR tbl_report.MAJLISID = 'kranichsteinost' OR tbl_report.MAJLISID = 'kranichsteinwest' OR tbl_report.MAJLISID = 'nuurddinmoschee' OR tbl_report.MAJLISID = 'weiterstadt') AND tbl_report.YEAR &gt;= 2013 AND tbl_report.YEAR &lt;= 2013 AND tbl_report.MONTH &gt;= 1 AND tbl_report.MONTH &lt;= 5
+	ORDER BY tbl_report.YEAR ASC, tbl_report.MONTH ASC, tbl_question.ID ASC
+	GROUP BY tbl_report.YEAR, tbl_report.MONTH, tbl_question.ID</string>
+		<string>SELECT tbl_report.YEAR, tbl_report.MONTH, tbl_question.ID, tbl_question.QUESTION , tbl_answer.ANSWER, tbl_question.TYPEID
+	FROM tbl_ait_rpt_reportanswer AS tbl_answer
+		JOIN tbl_ait_rpt_reportquestion AS tbl_question
+			ON tbl_answer.QUESTIONID = tbl_question.ID
+		JOIN tbl_ait_rpt_reportheader AS tbl_report
+			ON tbl_answer.REPORTID = tbl_report.ID
+	WHERE (tbl_report.MAJLISID = 'dagriesheim' OR tbl_report.MAJLISID = 'darmstadtcity' OR tbl_report.MAJLISID = 'graefenhausen' OR tbl_report.MAJLISID = 'kranichsteinost' OR tbl_report.MAJLISID = 'kranichsteinwest' OR tbl_report.MAJLISID = 'nuurddinmoschee' OR tbl_report.MAJLISID = 'weiterstadt') AND tbl_report.YEAR &gt;= 2013 AND tbl_report.YEAR &lt;= 2013 AND tbl_report.MONTH &gt;= 1 AND tbl_report.MONTH &lt;= 5
+	ORDER BY tbl_report.YEAR ASC, tbl_report.MONTH ASC, tbl_question.ID ASC
+	GROUP BY tbl_report.YEAR, tbl_report.MONTH, tbl_question.ID</string>
+		<string>SELECT tbl_report.YEAR, tbl_report.MONTH, tbl_question.ID, tbl_question.QUESTION , tbl_answer.ANSWER, tbl_question.TYPEID
+	FROM tbl_ait_rpt_reportanswer AS tbl_answer
+		JOIN tbl_ait_rpt_reportquestion AS tbl_question
+			ON tbl_answer.QUESTIONID = tbl_question.ID
+		JOIN tbl_ait_rpt_reportheader AS tbl_report
+			ON tbl_answer.REPORTID = tbl_report.ID
+	WHERE (tbl_report.MAJLISID = 'dagriesheim' OR tbl_report.MAJLISID = 'darmstadtcity' OR tbl_report.MAJLISID = 'graefenhausen' OR tbl_report.MAJLISID = 'kranichsteinost' OR tbl_report.MAJLISID = 'kranichsteinwest' OR tbl_report.MAJLISID = 'nuurddinmoschee' OR tbl_report.MAJLISID = 'weiterstadt') AND tbl_report.YEAR &gt;= 2013 AND tbl_report.YEAR &lt;= 2013 AND tbl_report.MONTH &gt;= 1 AND tbl_report.MONTH &lt;= 5
+	ORDER BY tbl_report.YEAR ASC, tbl_report.MONTH ASC, tbl_question.ID ASC
+	GROUP BY tbl_report.YEAR, tbl_report.MONTH</string>
+		<string>SELECT tbl_report.YEAR
+	FROM tbl_ait_rpt_reportanswer AS tbl_answer
+		JOIN tbl_ait_rpt_reportquestion AS tbl_question
+			ON tbl_answer.QUESTIONID = tbl_question.ID
+		JOIN tbl_ait_rpt_reportheader AS tbl_report
+			ON tbl_answer.REPORTID = tbl_report.ID
+	WHERE (tbl_report.MAJLISID = 'dagriesheim' OR tbl_report.MAJLISID = 'darmstadtcity' OR tbl_report.MAJLISID = 'graefenhausen' OR tbl_report.MAJLISID = 'kranichsteinost' OR tbl_report.MAJLISID = 'kranichsteinwest' OR tbl_report.MAJLISID = 'nuurddinmoschee' OR tbl_report.MAJLISID = 'weiterstadt') AND tbl_report.YEAR &gt;= 2013 AND tbl_report.YEAR &lt;= 2013 AND tbl_report.MONTH &gt;= 1 AND tbl_report.MONTH &lt;= 5
+	ORDER BY tbl_report.YEAR ASC, tbl_report.MONTH ASC, tbl_question.ID ASC
+	GROUP BY tbl_report.YEAR</string>
+		<string>GROUP BY tbl_report.YEAR</string>
+		<string>SELECT tbl_report.YEAR, tbl_report.MONTH, tbl_question.ID, tbl_question.QUESTION , tbl_answer.ANSWER, tbl_question.TYPEID
+	FROM tbl_ait_rpt_reportanswer AS tbl_answer
+		JOIN tbl_ait_rpt_reportquestion AS tbl_question
+			ON tbl_answer.QUESTIONID = tbl_question.ID
+		JOIN tbl_ait_rpt_reportheader AS tbl_report
+			ON tbl_answer.REPORTID = tbl_report.ID
+	WHERE (tbl_report.MAJLISID = 'dagriesheim' OR tbl_report.MAJLISID = 'darmstadtcity' OR tbl_report.MAJLISID = 'graefenhausen' OR tbl_report.MAJLISID = 'kranichsteinost' OR tbl_report.MAJLISID = 'kranichsteinwest' OR tbl_report.MAJLISID = 'nuurddinmoschee' OR tbl_report.MAJLISID = 'weiterstadt') AND tbl_report.YEAR &gt;= 2013 AND tbl_report.YEAR &lt;= 2013 AND tbl_report.MONTH &gt;= 1 AND tbl_report.MONTH &lt;= 5
+	ORDER BY tbl_report.YEAR ASC, tbl_report.MONTH ASC, tbl_question.ID ASC
+	GROUP BY tbl_report.YEAR</string>
+		<string>SELECT tbl_report.YEAR, tbl_report.MONTH, tbl_question.ID, tbl_question.QUESTION , tbl_answer.ANSWER, tbl_question.TYPEID
+	FROM tbl_ait_rpt_reportanswer AS tbl_answer
+		JOIN tbl_ait_rpt_reportquestion AS tbl_question
+			ON tbl_answer.QUESTIONID = tbl_question.ID
+		JOIN tbl_ait_rpt_reportheader AS tbl_report
+			ON tbl_answer.REPORTID = tbl_report.ID
+	WHERE (tbl_report.MAJLISID = 'dagriesheim' OR tbl_report.MAJLISID = 'darmstadtcity' OR tbl_report.MAJLISID = 'graefenhausen' OR tbl_report.MAJLISID = 'kranichsteinost' OR tbl_report.MAJLISID = 'kranichsteinwest' OR tbl_report.MAJLISID = 'nuurddinmoschee' OR tbl_report.MAJLISID = 'weiterstadt') AND tbl_report.YEAR &gt;= 2013 AND tbl_report.YEAR &lt;= 2013 AND tbl_report.MONTH &gt;= 1 AND tbl_report.MONTH &lt;= 5
+	ORDER BY tbl_report.YEAR ASC, tbl_report.MONTH ASC, tbl_question.ID ASC</string>
+		<string>SELECT tbl_report.YEAR, tbl_report.MONTH, tbl_question.ID, tbl_question.QUESTION , tbl_answer.ANSWER, tbl_question.TYPEID
+	FROM tbl_ait_rpt_reportanswer AS tbl_answer
+		JOIN tbl_ait_rpt_reportquestion AS tbl_question
+			ON tbl_answer.QUESTIONID = tbl_question.ID
+		JOIN tbl_ait_rpt_reportheader AS tbl_report
+			ON tbl_answer.REPORTID = tbl_report.ID
+	WHERE (tbl_report.MAJLISID = 'dagriesheim' OR tbl_report.MAJLISID = 'darmstadtcity' OR tbl_report.MAJLISID = 'graefenhausen' OR tbl_report.MAJLISID = 'kranichsteinost' OR tbl_report.MAJLISID = 'kranichsteinwest' OR tbl_report.MAJLISID = 'nuurddinmoschee' OR tbl_report.MAJLISID = 'weiterstadt') AND tbl_report.YEAR &gt;= 2013 AND tbl_report.YEAR &lt;= 2013 AND tbl_report.MONTH &gt;= 1 AND tbl_report.MONTH &lt;= 5
+	ORDER BY tbl_report.YEAR ASC, tbl_report.MONTH ASC, tbl_question.ID ASC
+	GROUP BY tbl_question.ID
+	HAVING COUNT(tbl_answer.ANSWER)</string>
+		<string>GROUP BY tbl_question.ID</string>
+		<string>SELECT tbl_report.YEAR, tbl_report.MONTH, tbl_question.ID, tbl_question.QUESTION , tbl_answer.ANSWER, tbl_question.TYPEID
+	FROM tbl_ait_rpt_reportanswer AS tbl_answer
+		JOIN tbl_ait_rpt_reportquestion AS tbl_question
+			ON tbl_answer.QUESTIONID = tbl_question.ID
+		JOIN tbl_ait_rpt_reportheader AS tbl_report
+			ON tbl_answer.REPORTID = tbl_report.ID
+	WHERE (tbl_report.MAJLISID = 'dagriesheim' OR tbl_report.MAJLISID = 'darmstadtcity' OR tbl_report.MAJLISID = 'graefenhausen' OR tbl_report.MAJLISID = 'kranichsteinost' OR tbl_report.MAJLISID = 'kranichsteinwest' OR tbl_report.MAJLISID = 'nuurddinmoschee' OR tbl_report.MAJLISID = 'weiterstadt') AND tbl_report.YEAR &gt;= 2013 AND tbl_report.YEAR &lt;= 2013 AND tbl_report.MONTH &gt;= 1 AND tbl_report.MONTH &lt;= 5
+	ORDER BY tbl_report.YEAR ASC, tbl_report.MONTH ASC, tbl_question.ID ASC
+	GROUP BY tbl_question.ID</string>
+		<string>SELECT tbl_report.YEAR, tbl_report.MONTH, tbl_question.ID, tbl_question.QUESTION , tbl_answer.ANSWER, tbl_question.TYPEID
+	FROM tbl_ait_rpt_reportanswer AS tbl_answer
+		JOIN tbl_ait_rpt_reportquestion AS tbl_question
+			ON tbl_answer.QUESTIONID = tbl_question.ID
+		JOIN tbl_ait_rpt_reportheader AS tbl_report
+			ON tbl_answer.REPORTID = tbl_report.ID
+	WHERE (tbl_report.MAJLISID = 'dortmund') AND tbl_report.YEAR &gt;= 2013 AND tbl_report.YEAR &lt;= 2013 AND tbl_report.MONTH &gt;= 1 AND tbl_report.MONTH &lt;= 5
+	ORDER BY tbl_report.YEAR ASC, tbl_report.MONTH ASC, tbl_question.ID ASC</string>
+		<string>SELECT tbl_report.MAJLISID, tbl_report.YEAR, tbl_report.MONTH, tbl_question.ID, tbl_question.QUESTION , tbl_answer.ANSWER, tbl_question.TYPEID
+	FROM tbl_ait_rpt_reportanswer AS tbl_answer
+		JOIN tbl_ait_rpt_reportquestion AS tbl_question
+			ON tbl_answer.QUESTIONID = tbl_question.ID
+		JOIN tbl_ait_rpt_reportheader AS tbl_report
+			ON tbl_answer.REPORTID = tbl_report.ID
+	WHERE (tbl_report.MAJLISID = 'dagriesheim' OR tbl_report.MAJLISID = 'darmstadtcity' OR tbl_report.MAJLISID = 'graefenhausen' OR tbl_report.MAJLISID = 'kranichsteinost' OR tbl_report.MAJLISID = 'kranichsteinwest' OR tbl_report.MAJLISID = 'nuurddinmoschee' OR tbl_report.MAJLISID = 'weiterstadt') AND tbl_report.YEAR &gt;= 2013 AND tbl_report.YEAR &lt;= 2013 AND tbl_report.MONTH &gt;= 1 AND tbl_report.MONTH &lt;= 5
+	ORDER BY tbl_report.YEAR ASC, tbl_report.MONTH ASC, tbl_question.ID ASC</string>
+	</array>
+	<key>rdbms_type</key>
+	<string>mysql</string>
+	<key>rdbms_version</key>
+	<string>5.1.70-nmm2-log</string>
+	<key>version</key>
+	<integer>1</integer>
+</dict>
+</plist>
