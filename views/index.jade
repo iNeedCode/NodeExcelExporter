@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  form(method='post', action='/')
+    input(name='majlis', placeholder='Majlis', value='dortmund' required autofocus step='1')
+    input(name='fromDate', placeholder='01-2013', value='01-2013', pattern='[0-9]{2}-[0-9]{4}' required step='2')
+    input(name='toDate', placeholder='04-2013', value='04-2013', pattern='[0-9]{2}-[0-9]{4}' required step='3')
+    input(type='submit', value='create')
+
+  div
+    p= 'majlis: ' + t.body.majlis
+    p= 'from: ' + t.body.fromDate
+    p= 'to: ' + t.body.toDate
