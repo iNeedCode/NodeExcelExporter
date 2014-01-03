@@ -1,8 +1,40 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background-image:  -webkit-gradient(linear,left top,left bottom,color-stop(0, #EDEDED),color-stop(0.61, #C2C2C2));
+    background-image:  -o-linear-gradient(bottom, #EDEDED 0%, #C2C2C2 61%);
+    background-image:  -moz-linear-gradient(bottom, #EDEDED 0%, #C2C2C2 61%);
+    background-image:  -webkit-linear-gradient(bottom, #EDEDED 0%, #C2C2C2 61%);
+    background-image:  -ms-linear-gradient(bottom, #EDEDED 0%, #C2C2C2 61%);
+    background-image:  linear-gradient(to bottom, #EDEDED 0%, #C2C2C2 61%);
+}
+#infoButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.main {
+    padding: 30px;
+    padding-top: 150px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background: rgb(255, 194, 0);
+    height: 500px;
+    box-shadow: 0px 3px 16px 0px rgba(50, 50, 50, 0.77);
+    background-image: url(../images/noise.png);
 }
 
-a {
-  color: #00B7FF;
+.autocomplete-suggestions {
+    border: 1px solid #999;
+    background: #FFF;
+    overflow: auto;
+    strong {
+        font-weight: normal;
+        color: #3399FF;
+    }
+}
+.autocomplete-selected {
+    background: #F0F0F0;
+}
+.autocomplete-suggestion {
+    padding: 2px 5px;
+    white-space: nowrap;
+    overflow: hidden;
 }

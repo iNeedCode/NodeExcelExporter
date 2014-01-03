@@ -1,15 +1,45 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  form(method='post', action='/')
-    input(name='majlis', placeholder='Majlis', value='dortmund' required autofocus step='1')
-    input(name='fromDate', placeholder='01-2013', value='01-2013', pattern='[0-9]{2}-[0-9]{4}' required step='2')
-    input(name='toDate', placeholder='04-2013', value='04-2013', pattern='[0-9]{2}-[0-9]{4}' required step='3')
-    input(type='submit', value='create')
+  .main
+    span#infoButton.fa.fa-info-circle.fa-2x(data-toggle='modal', data-target='#myModal')
 
-  div
-    p= 'majlis: ' + t.body.majlis
-    p= 'from: ' + t.body.fromDate
-    p= 'to: ' + t.body.toDate
+    h1.text-center Statistics tool
+    p.text-center generate a summary of reports from received reports
+    br
+    br
+    span#outputcontent
+    form.form-inline.col-sm-offset-3(method='post', action='/report', role='form')
+      p.input-group.margin-bottom-sm.col-sm-offset-1.col-sm-6
+        span.input-group-addon
+          i.fa.fa-map-marker.fa-fw
+        input#autocomplete.form-control(type='text', name='majlis', placeholder='Majlis', value='dortmund' required autofocus step='1')
+      p.input-group.col-sm-offset-1.col-sm-3.pull-left
+        span.input-group-addon
+          i.fa.fa-calendar.fa-fw
+        input.form-control(type='text', name='fromDate', placeholder='01-2013', value='01-2013', pattern='[0-9]{2}-[0-9]{4}' required step='2')
+      p.input-group.col-sm-3
+        span.input-group-addon
+          i.fa.fa-calendar.fa-fw
+        input.form-control(type='text', name='toDate', placeholder='04-2013', value='04-2013', pattern='[0-9]{2}-[0-9]{4}' required step='3')
+      button.clearfix.btn.btn-large.btn-success.col-sm-offset-3(type='submit' step='4')
+        i.fa.fa-download.fa-2x
+        h5.lead generate
+
+
+    #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+      .modal-dialog
+        .modal-content
+          .modal-header
+            button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+            h4#myModalLabel.modal-title Information
+          .modal-body
+            | This fairly small statistics tool has been built for an especial purpose to
+            | query and merge sent reports of the majalis (cities) and generate an excel
+            | file to overview a selected dataset of several months.
+            h4 Credits
+            | The application based on Node.js is hosted as an open source software at
+            | <a href="https://github.com/iNeedCode/NodeExcelExporter" target="_blank"><i class="fa fa-github-alt"></i> Github</a>
+            | and can be downloaded from there.
+          .modal-footer
+            button.btn.btn-default(type='button', data-dismiss='modal') Close

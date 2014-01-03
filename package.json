@@ -11,7 +11,7 @@
     "excel",
     "mysql"
   ],
-  "dependencies" : {
+  "dependencies": {
     "express": "3.x",
     "jade": "*",
     "less-middleware": "*",
@@ -19,7 +19,9 @@
     "heredoc": "1.2.0",
     "js-yaml": "git://github.com/nodeca/js-yaml.git",
     "optimist": "*",
-    "node_spreadsheet": "*"
+    "node_spreadsheet": "*",
+    "node-zip": "1.x",
+    "excel-export-impr": "0.4.1"
   },
   "author": "Willy Wonka",
   "license": "BSD"
