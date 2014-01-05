@@ -6,6 +6,12 @@ body {
   background-image: -ms-linear-gradient(bottom, #ededed 0%, #c2c2c2 61%);
   background-image: linear-gradient(to bottom, #ededed 0%, #c2c2c2 61%);
 }
+#searched {
+  padding: 20px;
+  max-height: 100%;
+  position: absolute;
+  width: 100%;
+}
 #infoButton {
   position: absolute;
   top: 10px;
@@ -18,7 +24,7 @@ body {
   background: #ffc200;
   height: 500px;
   box-shadow: 0px 3px 16px 0px rgba(50, 50, 50, 0.77);
-  background-image: url(../images/noise.png);
+  background-image: url(../images/noise1.png);
 }
 .autocomplete-suggestions {
   border: 1px solid #999;

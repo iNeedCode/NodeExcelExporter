@@ -11,7 +11,7 @@ exports.index = function(req, res) {
 exports.getAllSections = function(req, res) {
 
   var mysql     = require('mysql');
-  var dbConfig = require('./dbConfig')
+  var dbConfig = require('../config/db')
   var data = []
 
   var connection = mysql.createConnection({

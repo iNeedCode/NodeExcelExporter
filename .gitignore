@@ -12,6 +12,6 @@ logs
 results
 
 node_modules
+config/*.json
 
 *.xls
-dbConfig.json
