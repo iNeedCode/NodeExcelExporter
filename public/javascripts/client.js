@@ -1,6 +1,16 @@
 $( document ).ready(function() {
 
 	if ( sessionStorage.SectionsData ) {
+ 		loadSectionsData();
+	} 
+	else {
+	 	$.get( "http://localhost:3000/getAllSections", function( data ) {
+	 		sessionStorage.SectionsData = JSON.stringify(data);
+	 		loadSectionsData();
+		});
+	};
+
+	function loadSectionsData () {
 	 	var sections = JSON.parse(sessionStorage.SectionsData)
 
 		$('#autocomplete').autocomplete({
@@ -14,12 +24,7 @@ $( document ).ready(function() {
 				return suggestion.value + " (" + suggestion.section +")";
 			}
 		});
-	} 
-	else {
-	 	$.get( "http://localhost:3000/getAllSections", function( data ) {
-	 		sessionStorage.SectionsData = JSON.stringify(data);
-		});
-	};
+	}
 
 
 });
