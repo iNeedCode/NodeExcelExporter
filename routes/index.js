@@ -29,12 +29,9 @@ exports.getAllSections = function(req, res) {
     if (err) throw err;
     for (var i = rows.length - 1; i >= 0; i--) {
       data.push(rows[i]);
-      // console.log(rows[i]);
     };
-
-  res.send(data);    
+    res.send(data);    
   });
 
   connection.end();
-
 };

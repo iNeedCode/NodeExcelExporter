@@ -1,4 +1,4 @@
-var dbConfig		= require('./dbConfig.json')
+var dbConfig		= require('./config/db.json')
 var heredoc 		= require('heredoc');
 var argv				= require('optimist').argv;
 var mysql			= require('mysql');

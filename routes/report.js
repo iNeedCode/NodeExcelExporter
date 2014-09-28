@@ -8,20 +8,27 @@ exports.create = function(req, res) {
   // res.render('index', { title: 'Express'});
 
   var majlis = req.body.majlis
+  var inFromMonth   = toMonth(req.body.fromDate);
+  var inFromYear    = toYear(req.body.fromDate)
+  var inToMonth     = toMonth(req.body.toDate);
+  var inToYear    = toYear(req.body.toDate);  
+
+  console.log(inFromMonth + "-" + inFromYear +"/"+inToMonth + "-" + inToYear)
 
 
 var conf ={};
   conf.cols = [
-	{caption:'string', type:'string'},
-	{caption:'date', type:'date'},
-	{caption:'bool', type:'bool'},
-	{caption:'number', type:'number'},
-  {caption:'link', type:'hyperlink'},
-  {caption:'string', type:'string'}
+	{caption:'Majlis', type:'string'},
+	{caption: majlis, type:'string'},
+	{caption:'', type:'string'},
+	{caption:'', type:'string'},
+  {caption:'', type:'string'},
+  {caption:'', type:'string'},
+  {caption:'', type:'string'}
   ];
   conf.rows = [
-	['pi', (new Date(2013, 4, 1)).getJulian(), true, 3.14, { text: 'Google', href: 'http://www.google.com'}],
-	["e", (new Date(2012, 4, 1)).getJulian(), false, 2.7182, { text: 'Google', href: 'http://www.google.com'}, '22', '22', '22', '22']
+	[44, 44, 44, 44, 44, 44, 43],
+	["e","e","e","e","e","e","e"]
   ];
   // console.log(conf);
   var result = nodeExcel.execute(conf);
@@ -32,3 +39,14 @@ var conf ={};
 
 
 };
+
+
+function toMonth (_date) {
+  month = _date.match(/^../g);
+  return parseInt(month);
+}
+
+function toYear (_date) {
+  year = _date.match(/....$/g);
+  return parseInt(year);
+}
